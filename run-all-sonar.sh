@@ -34,11 +34,10 @@ sudo git checkout develop
 sudo git reset --hard origin/develop
 cd ..
 sudo chown 1000:1000 -R sief-back
-
-sh ./sonar-scanner-run-aef-portail-agent.sh
-sh ./sonar-scanner-run-aef-portail-usager.sh
-sh ./sonar-scanner-run-anef-ui-lib.sh
-sh ./sonar-scanner-run-gaip-front.sh
-#sh ./sonar-scanner-run-gaip-api.sh
-sh ./sonar-scanner-run-sianf-front-agents.sh
-sh ./sonar-scanner-run-sief-back.sh
+sh /opt/SonarQube/sonar-scanner-run-aef-portail-agent.sh
+sh /opt/SonarQube/sonar-scanner-run-aef-portail-usager.sh
+sh /opt/SonarQube/sonar-scanner-run-anef-ui-lib.sh
+sh /opt/SonarQube/sonar-scanner-run-gaip-front.sh
+#sh /opt/SonarQube/sonar-scanner-run-gaip-api.sh
+sh /opt/SonarQube/sonar-scanner-run-sianf-front-agents.sh
+sh /opt/SonarQube/sonar-scanner-run-sief-back.sh
