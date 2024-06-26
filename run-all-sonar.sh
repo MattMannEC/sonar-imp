@@ -1,4 +1,4 @@
-cd /opt/SonarQube
+cd /opt/ANEF-src
 cd aef-portail-agent
 sudo git checkout develop
 sudo git reset --hard origin/develop

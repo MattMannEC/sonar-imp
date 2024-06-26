@@ -1,4 +1,4 @@
-cd /opt/SonarQube
+cd /opt/ANEF-src
 sudo git clone git@github.com:MI-ANEF/aef-portail-agent &&
 sudo git clone git@github.com:MI-ANEF/aef-portail-usager &&
 sudo git clone git@github.com:MI-ANEF/anef-ui-lib &&
