@@ -20,7 +20,7 @@ if [ ! -f "sonar-project.properties" ]; then
     echo "Error: sonar-project.properties introuvable."
     exit 1
 fi
-sudo sed -i "s/projectName=.*/projectName=$repo $branch/" sonar-project.properties
+sudo sed -i "s/projectName=.*/projectName=$repo - $branch/" sonar-project.properties
 
 echo "** run sonar scanner **"
 sudo podman run \
