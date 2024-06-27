@@ -15,6 +15,13 @@ if ! sudo git switch "$branch"; then
     exit 1
 fi
 
+echo "** update sonar-project.properties **"
+if [ ! -f "sonar-project.properties" ]; then
+    echo "Error: sonar-project.properties introuvable."
+    exit 1
+fi
+sed -i "s/projectName=.*/projectName='$repo-$branch'/" sonar-project.properties
+
 echo "** run sonar scanner **"
 sudo podman run \
     --rm \
