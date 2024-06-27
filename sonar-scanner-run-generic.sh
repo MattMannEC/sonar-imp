@@ -1,21 +1,24 @@
 repo=$1 
 branch=$2
-tmp_project_root="/opt/ANEF-src/tmp-$repo-$branch"
+tmp_project_root="tmp-$repo-$branch"
 
-mkdir "$tmp_project_root"
+
+cd /opt/ANEF-src
+echo "** clone $repo **"
+sudo git clone git@github.com:MI-ANEF/"$repo" "$tmp_project_root"
 cd "$tmp_project_root"
-sudo git clone git@github.com:MI-ANEF/"$repo"
-
 if [ ! -d "$tmp_project_root/.git" ]; then
     echo "Error: Repo git introuvable ('$repo')"
     exit 1
 fi
 
+echo "** switch $branch **"
 if ! git switch "$branch"; then
     echo "Error: Echec de changement de branch.('$branch')"
     exit 1
 fi
 
+echo "** run sonar scanner **"
 sudo podman run \
     --rm \
     -e SONAR_HOST_URL="http://10.29.151.18:9000" \
@@ -25,4 +28,5 @@ sudo podman run \
     sonarsource/sonar-scanner-cli
 
 cd /opt/ANEF-src
+echo "** remove '$tmp_project_root' **"
 sudo rm -rf "$tmp_project_root"
