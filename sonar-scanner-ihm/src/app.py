@@ -26,9 +26,14 @@ def run():
     repo = request.form["repo"]
     branch = request.form["branch"]
     logger.info(f"Params: repo => {repo}, branch => {branch}")
+    
+    if branch != "develop":  
+        args = [f"{scripts_dir}/sonar-scanner-run-generic.sh {repo} {branch}"]
+    else:
+        args = [f"{scripts_dir}/sonar-scanner-run-{repo}.sh"]
     try:
         result = subprocess.run(
-            f"{scripts_dir}/sonar-scanner-run-{repo}.sh", shell=True, capture_output=True, text=True, check=True
+            args, shell=True, capture_output=True, text=True, check=True
         )
         output = result.stdout + result.stderr
     except subprocess.CalledProcessError as e:
