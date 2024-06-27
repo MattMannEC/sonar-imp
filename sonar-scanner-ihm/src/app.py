@@ -15,7 +15,7 @@ repos = [
     "sief-back",
 ]
 
-scripts_dir = "/app"
+scripts_dir = "/opt/SonarQube"
 
 @app.route("/")
 def index():
@@ -26,7 +26,7 @@ def run():
     repo = request.form["repo"]
     branch = request.form["branch"]
     logger.info(f"Params: repo => {repo}, branch => {branch}")
-    
+
     if branch != "develop":  
         args = [f"{scripts_dir}/sonar-scanner-run-generic.sh {repo} {branch}"]
     else:
