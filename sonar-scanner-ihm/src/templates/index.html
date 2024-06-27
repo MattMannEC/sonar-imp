@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<h2>Run Script</h2>
+<form action="/run" method="post">
+    <select name="repo" id="repo">
+        {% for repo in repos %}
+            <option value="{{ repo }}">{{ repo }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <input name="branch" type="text" value="develop"></input><br>
+    <input type="submit" value="Run">
+</form>
+{% endblock %}
