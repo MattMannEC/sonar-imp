@@ -1,12 +1,20 @@
 repo=$1 
 branch=$2
-tmp_project_root="tmp-$repo-$branch"
+tmp_project_root="/opt/ANEF-src/tmp-$repo-$branch"
 
-cd /opt/ANEF-src
 mkdir "$tmp_project_root"
 cd "$tmp_project_root"
 sudo git clone git@github.com:MI-ANEF/"$repo"
-git switch "$branch"
+
+if [ ! -d "$tmp_project_root/.git" ]; then
+    echo "Error: Repo git introuvable ('$repo')"
+    exit 1
+fi
+
+if ! git switch "$branch"; then
+    echo "Error: Echec de changement de branch.('$branch')"
+    exit 1
+fi
 
 sudo podman run \
     --rm \
