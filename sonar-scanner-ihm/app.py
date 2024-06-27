@@ -31,7 +31,8 @@ def run():
         args = [f"{scripts_dir}/sonar-scanner-run-generic.sh {repo} {branch}"]
     else:
         args = [f"{scripts_dir}/sonar-scanner-run-{repo}.sh"]
-    try:
+    try:   
+        logger.info(f"Run: {args}")
         result = subprocess.run(
             args, shell=True, capture_output=True, text=True, check=True
         )

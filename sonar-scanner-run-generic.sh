@@ -9,8 +9,8 @@ sudo git clone git@github.com:MI-ANEF/"$repo" "$tmp_project_root"
 cd "$tmp_project_root"
 
 echo "** switch $branch **"
-if ! git switch "$branch"; then
-    echo "Error: Echec de changement de branch.('$branch')"
+if ! sudo git switch "$branch"; then
+    echo "** Error: Echec de changement de branch. ('$branch') **"
     exit 1
 fi
 
