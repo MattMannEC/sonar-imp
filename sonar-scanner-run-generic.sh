@@ -5,7 +5,7 @@ tmp_project_root="tmp-$repo-$branch"
 cd /opt/ANEF-src
 mkdir "$tmp_project_root"
 cd "$tmp_project_root"
-git clone git@github.com:MI-ANEF/"$repo"
+sudo git clone git@github.com:MI-ANEF/"$repo"
 git switch "$branch"
 
 sudo podman run \
@@ -17,4 +17,4 @@ sudo podman run \
     sonarsource/sonar-scanner-cli
 
 cd /opt/ANEF-src
-rm -rf "$tmp_project_root"
+sudo rm -rf "$tmp_project_root"
