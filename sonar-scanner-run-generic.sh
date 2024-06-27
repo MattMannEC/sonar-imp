@@ -7,10 +7,6 @@ cd /opt/ANEF-src
 echo "** clone $repo **"
 sudo git clone git@github.com:MI-ANEF/"$repo" "$tmp_project_root"
 cd "$tmp_project_root"
-if [ ! -d "$tmp_project_root/.git" ]; then
-    echo "Error: Repo git introuvable ('$repo')"
-    exit 1
-fi
 
 echo "** switch $branch **"
 if ! git switch "$branch"; then
