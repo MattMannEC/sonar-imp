@@ -6,7 +6,7 @@ tmp_project_root="tmp-$repo-$branch"
 cd /opt/ANEF-src
 echo "** clone $repo **"
 sudo git clone git@github.com:MI-ANEF/"$repo" "$tmp_project_root"
-sudo chown -R 1000:1000 "$tmp_project_root"
+sudo chown -R $(whoami):"domain users" "$tmp_project_root"
 cd "$tmp_project_root"
 
 echo "** switch $branch **"
