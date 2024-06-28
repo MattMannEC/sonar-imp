@@ -1,0 +1,2 @@
+sonar-scanner-ihm/server*.log
+sonar-scanner-ihm/.venv/
