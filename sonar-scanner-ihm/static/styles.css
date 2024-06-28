@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #0055A4; /* Blue from the French flag */
+    background-color: #0055A4; 
     color: white;
     padding: 1rem;
     text-align: center;
@@ -29,8 +29,8 @@ main {
 }
 
 h2 {
-    color: #EF4135; /* Red from the French flag */
-    border-bottom: 2px solid #EF4135;
+    color: #0055A4; 
+    border-bottom: 2px solid #0055A4;
     padding-bottom: 0.5rem;
 }
 
@@ -49,7 +49,7 @@ select, input[type="text"] {
 input[type="submit"] {
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #EF4135; /* Red from the French flag */
+    background-color: #0055A4; 
     border: none;
     border-radius: 0; /* Sharp edges */
     cursor: pointer;
@@ -57,7 +57,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #d40e12; /* Darker red for hover effect */
+    background-color: #00407d;
 }
 
 pre {
@@ -70,7 +70,7 @@ pre {
 }
 
 a {
-    color: #0055A4; /* Blue from the French flag */
+    color: #0055A4; 
     text-decoration: none;
     margin-top: 1rem;
     display: inline-block;
