@@ -1,2 +1,2 @@
-sonar-scanner-ihm/server*.log
+logs/server*.log
 sonar-scanner-ihm/.venv/
