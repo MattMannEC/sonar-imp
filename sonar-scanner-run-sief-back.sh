@@ -10,5 +10,3 @@ sudo podman run \
     -e SONAR_TOKEN="$SONAR_TOKEN" \
     -v "/opt/ANEF-src/sief-back:/usr/src:z" \
     sonarsource/sonar-scanner-cli
-
-è
