@@ -1,6 +1,6 @@
 # Load environment variables from .env file
 set -a
-source .env
+source ./.env
 set +a
 
 sudo podman run \
