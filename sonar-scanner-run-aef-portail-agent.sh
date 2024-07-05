@@ -1,8 +1,13 @@
+# Load environment variables from .env file
+set -a
+source .env
+set +a
+
 sudo podman run \
     --rm \
-    -e SONAR_HOST_URL="http://10.29.151.18:9000" \
+    -e SONAR_HOST_URL="$SONAR_HOST_URL" \
     -e SONAR_SCANNER_OPTS="-Dsonar.projectKey=aef-portail-agent" \
-    -e SONAR_TOKEN="sqa_9411830d5a3c07d17bed1e3b05e674f103da52c8" \
+    -e SONAR_TOKEN="$SONAR_TOKEN" \
     -v "/opt/ANEF-src/aef-portail-agent:/usr/src:z" \
     sonarsource/sonar-scanner-cli
 
