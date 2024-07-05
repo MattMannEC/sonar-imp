@@ -1,6 +1,6 @@
 # Load environment variables from .env file
 set -a
-source ./.env
+source /opt/SonarQube/.env
 set +a
 
 sudo podman run \
@@ -11,3 +11,4 @@ sudo podman run \
     -v "/opt/ANEF-src/sief-back:/usr/src:z" \
     sonarsource/sonar-scanner-cli
 
+è

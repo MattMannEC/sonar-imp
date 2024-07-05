@@ -4,7 +4,7 @@ tmp_project_root="tmp-$repo-$branch"
 
 # Load environment variables from .env file
 set -a
-source ./.env
+source /opt/SonarQube/.env
 set +a
 
 
